@@ -1,6 +1,6 @@
 import {Text, TextInput, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {Styles} from '../styles/wordsCount.styles';
+import {Styles} from '../textAnalyser.styles';
 
 const WordsCount = () => {
   const [input, setInput] = useState<string>('');
