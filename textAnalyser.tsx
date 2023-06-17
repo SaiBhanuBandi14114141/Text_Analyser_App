@@ -1,8 +1,8 @@
 import {Text, TextInput, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {Styles} from '../textAnalyser.styles';
+import {Styles} from '../styles/textAnalyzer.styles';
 
-const WordsCount = () => {
+const TextAnalyser = () => {
   const [input, setInput] = useState<string>('');
   const [words, setWords] = useState<number>(0);
   const [vowel, setVowel] = useState<number>(0);
@@ -63,7 +63,7 @@ const WordsCount = () => {
 
   return (
     <View style={Styles.mainContainer}>
-      <Text style={[Styles.font, Styles.header]}>English Count App</Text>
+      <Text style={[Styles.font, Styles.header]}>Text Analyser App</Text>
       <TextInput
         placeholder="Please enter your paragraph here..."
         style={Styles.inputBox}
@@ -72,48 +72,50 @@ const WordsCount = () => {
         value={input}
         selectionColor={'red'}
       />
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.character]}>Characters</Text>
-        <Text style={[Styles.font, Styles.words]}>Words</Text>
-      </View>
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.character]}>{input.length}</Text>
-        <Text style={[Styles.font, Styles.words]}>{words}</Text>
-      </View>
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.sentence]}>Sentence</Text>
-        <Text style={[Styles.font, Styles.vowels]}>Vowels</Text>
-      </View>
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.sentence]}>{sentence}</Text>
-        <Text style={[Styles.font, Styles.vowels]}>{vowel}</Text>
-      </View>
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.articles]}>Articles</Text>
-        <Text style={[Styles.font, Styles.longestWordLength]}>
-          Longest Word Length
-        </Text>
-      </View>
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.articles]}>{article}</Text>
-        <Text style={[Styles.font, Styles.longestWordLength]}>
-          {longestWord.length}
-        </Text>
-      </View>
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.longestWord]}>Longest Word</Text>
-        <Text style={[Styles.font, Styles.readingTime]}>Reading Time</Text>
-      </View>
-      <View style={Styles.row}>
-        <Text style={[Styles.font, Styles.longestWord]}>
-          {longestWord.length < 13 ? longestWord : '........'}
-        </Text>
-        <Text style={[Styles.font, Styles.readingTime]}>
-          ~ {(words / 10).toFixed(1)} mins
-        </Text>
+      <View style={Styles.bottomView}>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.character]}>Characters</Text>
+          <Text style={[Styles.font, Styles.words]}>Words</Text>
+        </View>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.character]}>{input.length}</Text>
+          <Text style={[Styles.font, Styles.words]}>{words}</Text>
+        </View>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.sentence]}>Sentence</Text>
+          <Text style={[Styles.font, Styles.vowels]}>Vowels</Text>
+        </View>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.sentence]}>{sentence}</Text>
+          <Text style={[Styles.font, Styles.vowels]}>{vowel}</Text>
+        </View>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.articles]}>Articles</Text>
+          <Text style={[Styles.font, Styles.longestWordLength]}>
+            Long Word Len
+          </Text>
+        </View>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.articles]}>{article}</Text>
+          <Text style={[Styles.font, Styles.longestWordLength]}>
+            {longestWord.length}
+          </Text>
+        </View>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.longestWord]}>Longest Word</Text>
+          <Text style={[Styles.font, Styles.readingTime]}>Reading Time</Text>
+        </View>
+        <View style={Styles.row}>
+          <Text style={[Styles.font, Styles.longestWord]}>
+            {longestWord.length < 13 ? longestWord : '........'}
+          </Text>
+          <Text style={[Styles.font, Styles.readingTime]}>
+            ~ {(words / 10).toFixed(1)} mins
+          </Text>
+        </View>
       </View>
     </View>
   );
 };
 
-export default WordsCount;
+export default TextAnalyser;
