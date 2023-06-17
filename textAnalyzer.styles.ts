@@ -29,6 +29,7 @@ export const Styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 30,
     color: 'blue',
+    textDecorationLine: 'underline',
   },
   character: {
     color: 'violet',
